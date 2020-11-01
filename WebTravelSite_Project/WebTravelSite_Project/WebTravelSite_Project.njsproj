@@ -29,7 +29,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="HomeTestScript.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="server.js" />
+    <Content Include="HomeStyle.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
     <Content Include="Index.html">
       <SubType>Code</SubType>
