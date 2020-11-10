@@ -33,6 +33,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />
+    <Content Include="Destinations.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="HomeStyle.css">
       <SubType>Code</SubType>
     </Content>
