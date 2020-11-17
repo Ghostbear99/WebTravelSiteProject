@@ -26,8 +26,10 @@ let server = http.createServer(function (req, res) {
     }
     //If .css file is linked in .html file we will see which file we have and load the correct style sheet
     if (req.url.indexOf('.css') != -1) {
-        fs.readFile(__dirname + '/HomeStyle.css', function (error, data) {
-             //If error is returned then write 404 and print out error message in command promp(Where we start server)
+        let temp = path.split('.');
+        let newPath = ('/' + temp[0] + '.css');
+        fs.readFile(__dirname + newPath, function (error, data) {
+            //If error is returned then write 404 and print out error message in command promp(Where we start server)
             if (error) {
                 res.writeHead(404);
                 res.write(error);
@@ -42,7 +44,9 @@ let server = http.createServer(function (req, res) {
     }
     //If .js file is linked in html file then load the correct one
     if (req.url.indexOf('.js') != -1) {
-        fs.readFile(__dirname + '/HomeTestScript.js', function (error, data) {
+        let temp = path.split('.');
+        let newPath = ('/' + temp[0] + '.js');
+        fs.readFile(__dirname + newPath, function (error, data) {
             //If error is returned then write 404 and print out error message in command promp(Where we start server)
             if (error) {
                 res.writeHead(404);
@@ -56,7 +60,6 @@ let server = http.createServer(function (req, res) {
             }
         });
     }
- 
 });
 //Continues to listen for further connections
 server.listen(port);
