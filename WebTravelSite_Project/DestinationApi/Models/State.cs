@@ -11,13 +11,13 @@ namespace DestinationApi.Models
         private string basicInfo;
         private string locationOneHeader;
         private string locationOneImage;
-        private string locationOneInfo;
+        private string locationOneText;
         private string locationTwoHeader;
         private string locationTwoImage;
-        private string locationTwoInfo;
+        private string locationTwoText;
         private string locationThreeHeader;
         private string locationThreeImage;
-        private string locationThreeInfo;
+        private string locationThreeText;
 
         public State(string name, string basicInfo, string locationOneHeader, string locationOneImage, string locationOneInfo,
             string locationTwoHeader, string locationTwoImage, string locationTwoInfo, string locationThreeHeader, 
@@ -27,28 +27,15 @@ namespace DestinationApi.Models
             this.basicInfo = basicInfo;
             this.locationOneHeader = locationOneHeader;
             this.locationOneImage = locationOneImage;
-            this.locationOneInfo = locationOneInfo;
+            this.locationOneText = locationOneInfo;
             this.locationTwoHeader = locationTwoHeader;
             this.locationTwoImage = locationTwoImage;
-            this.locationTwoInfo = locationTwoInfo;
+            this.locationTwoText = locationTwoInfo;
             this.locationThreeHeader = locationThreeHeader;
             this.locationThreeImage = locationThreeImage;
-            this.locationThreeInfo = locationThreeInfo;
+            this.locationThreeText = locationThreeInfo;
         }
-        public State()
-        {
-            this.name = "test";
-            this.basicInfo = "test";
-            this.locationOneHeader = "test";
-            this.locationOneImage = "test";
-            this.locationOneInfo = "test";
-            this.locationTwoHeader = "test";
-            this.locationTwoImage = "test";
-            this.locationTwoInfo = "test";
-            this.locationThreeHeader = "test";
-            this.locationThreeImage = "test";
-            this.locationThreeInfo = "test";
-        }
+        public State(){}
         public string Name
         {
             get
@@ -93,15 +80,15 @@ namespace DestinationApi.Models
                 locationOneImage = value;
             }
         }
-        public string LocationOneInfo
+        public string LocationOneText
         {
             get
             {
-                return locationOneInfo;
+                return locationOneText;
             }
             set
             {
-                locationOneInfo = value;
+                locationOneText = value;
             }
         }
         public string LocationTwoHeader
@@ -126,15 +113,15 @@ namespace DestinationApi.Models
                 locationTwoImage = value;
             }
         }
-        public string LocationTwoInfo
+        public string LocationTwoText
         {
             get
             {
-                return locationTwoInfo;
+                return locationTwoText;
             }
             set
             {
-                locationTwoInfo = value;
+                locationTwoText = value;
             }
         }
         public string LocationThreeHeader
@@ -159,15 +146,15 @@ namespace DestinationApi.Models
                 locationThreeImage = value;
             }
         }
-        public string LocationThreeInfo
+        public string LocationThreeText
         {
             get
             {
-                return LocationThreeInfo;
+                return LocationThreeText;
             }
             set
             {
-                locationThreeInfo = value;
+                locationThreeText = value;
             }
         }
     }
