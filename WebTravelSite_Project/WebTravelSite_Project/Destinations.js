@@ -4,8 +4,6 @@
     "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas",
     "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming");
 window.onload = function () {
-    alert(stateNames.length);
-
     let searchButton = document.getElementById("search-button");
     let searchText = document.getElementById("search-text");
 
@@ -62,7 +60,19 @@ function createState(stateDoc, stateName) {
 
     masterDocument.appendChild(stateDiv);
 
-    stateDiv.addEventListener("click", stateInfo);
+    stateDiv.onclick = function () {
+        let request = new XMLHttpRequest();
+        let stateIndex = stateNames.indexOf(stateDiv.value)
+        request.open("GET", "https://localhost:44342/api/Destination/GetState/" + stateIndex);
+        request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                let temp = (request.responseText).split('|');
+                stateInfo(stateDoc, temp);
+            }
+        };
+        request.send();
+    }
 }
 function clearStateResults() {
     let masterDoc = document.getElementById("search-state-results");
@@ -70,16 +80,68 @@ function clearStateResults() {
         masterDoc.removeChild(masterDoc.firstChild);
     }
 }
-function stateInfo() {
-    let request = new XMLHttpRequest();
+function stateInfo(stateDoc, infoArray) {
+    let masterDocument = stateDoc;
+    let arr = infoArray;
 
-    request.open("GET", "https://localhost:44342/api/Destination/States");
-    request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
-    request.onreadystatechange = function () {
-        if (request.readyState == 4 && request.status == 200) {
-            let temp = JSON.parse(JSON.stringify(request.responseText));
-            alert(temp);
-        }
-    };
-    request.send();
+    masterDocument.style.display = "none";
+
+    let stateDocument = document.getElementById("state-info");
+
+    let header = document.createElement("h1");
+    let headerText = document.createTextNode(arr[0]);
+    header.appendChild(headerText);
+
+    let info = document.createElement("p");
+    let infoText = document.createTextNode(arr[1]);
+    info.appendChild(infoText);
+
+    let locationOneHeader = document.createElement("h2");
+    let locationOneHeaderText = document.createTextNode(arr[2]);
+    locationOneHeader.appendChild(locationOneHeaderText);
+
+    let locationOneImage = document.createElement("img");
+    locationOneImage.src = arr[3];
+
+    let locationOneInfo = document.createElement("p");
+    let locationOneInfoText = document.createTextNode(arr[4]);
+    locationOneInfo.appendChild(locationOneInfoText);
+
+    let locationTwoHeader = document.createElement("h2");
+    let locationTwoHeaderText = document.createTextNode(arr[5]);
+    locationTwoHeader.appendChild(locationTwoHeaderText);
+
+    let locationTwoImage = document.createElement("img");
+    locationTwoImage.src = arr[6];
+
+    let locationTwoInfo = document.createElement("p");
+    let locationTwoInfoText = document.createTextNode(arr[7]);
+    locationTwoInfo.appendChild(locationTwoInfoText);
+
+    let locationThreeHeader = document.createElement("h2");
+    let locationThreeHeaderText = document.createTextNode(arr[8]);
+    locationThreeHeader.appendChild(locationThreeHeaderText);
+
+    let locationThreeImage = document.createElement("img");
+    locationThreeImage.src = arr[9];
+
+    let locationThreeInfo = document.createElement("p");
+    let locationThreeInfoText = document.createTextNode(arr[10]);
+    locationThreeInfo.appendChild(locationThreeInfoText);
+
+
+
+    stateDocument.appendChild(header);
+    stateDocument.appendChild(info);
+    stateDocument.appendChild(locationOneHeader);
+    stateDocument.appendChild(locationOneImage);
+    stateDocument.appendChild(locationOneInfoText);
+    stateDocument.appendChild(locationTwoHeader);
+    stateDocument.appendChild(locationTwoImage);
+    stateDocument.appendChild(locationTwoInfoText);
+    stateDocument.appendChild(locationThreeHeader);
+    stateDocument.appendChild(locationThreeImage);
+    stateDocument.appendChild(locationThreeInfoText);
+
+
 }
