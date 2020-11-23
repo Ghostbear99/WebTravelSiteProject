@@ -117,7 +117,7 @@ function stateInfo(stateDoc, infoArray) {
     let locationTwoInfo = document.createElement("p");
     let locationTwoInfoText = document.createTextNode(arr[7]);
     locationTwoInfo.appendChild(locationTwoInfoText);
-
+    /*
     let locationThreeHeader = document.createElement("h2");
     let locationThreeHeaderText = document.createTextNode(arr[8]);
     locationThreeHeader.appendChild(locationThreeHeaderText);
@@ -128,7 +128,7 @@ function stateInfo(stateDoc, infoArray) {
     let locationThreeInfo = document.createElement("p");
     let locationThreeInfoText = document.createTextNode(arr[10]);
     locationThreeInfo.appendChild(locationThreeInfoText);
-
+    */
 
 
     stateDocument.appendChild(header);
@@ -139,9 +139,10 @@ function stateInfo(stateDoc, infoArray) {
     stateDocument.appendChild(locationTwoHeader);
     stateDocument.appendChild(locationTwoImage);
     stateDocument.appendChild(locationTwoInfoText);
+    /*
     stateDocument.appendChild(locationThreeHeader);
     stateDocument.appendChild(locationThreeImage);
     stateDocument.appendChild(locationThreeInfoText);
-
+    */
 
 }
