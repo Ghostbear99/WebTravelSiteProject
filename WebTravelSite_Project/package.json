@@ -1,0 +1,9 @@
+{
+  "name": "web-travel-site_project",
+  "version": "0.0.0",
+  "description": "WebTravelSite_Project",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
