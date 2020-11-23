@@ -29,7 +29,7 @@ namespace DestinationApi.Controllers
 
             string message = temp.Name + "|" + temp.BasicInfo + "|" + temp.LocationOneHeader + "|" + temp.LocationOneImage + "|" + temp.LocationOneText + "|" + temp.LocationTwoHeader + "|" + temp.LocationTwoImage + "|" + temp.LocationTwoText;
             //If I merge message and messageTwo something goes wrong with API, not sure why
-            string messageTwo = "|" + temp.LocationThreeHeader + "|" + temp.LocationThreeImage + "|" + temp.LocationThreeText;
+            //string messageTwo = "|" + temp.LocationThreeHeader + "|" + temp.LocationThreeImage + "|" + temp.LocationThreeText;
 
             return message;
 
