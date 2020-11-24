@@ -1,0 +1,14 @@
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\bin\Debug\netcoreapp2.1\DestinationApi.deps.json
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\bin\Debug\netcoreapp2.1\DestinationApi.runtimeconfig.json
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\bin\Debug\netcoreapp2.1\DestinationApi.runtimeconfig.dev.json
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\bin\Debug\netcoreapp2.1\DestinationApi.dll
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.csprojAssemblyReference.cache
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.csproj.CoreCompileInputs.cache
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.RazorAssemblyInfo.cache
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.RazorAssemblyInfo.cs
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.AssemblyInfoInputs.cache
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.AssemblyInfo.cs
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.RazorTargetAssemblyInfo.cache
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\bin\Debug\netcoreapp2.1\DestinationApi.pdb
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.dll
+C:\Users\gawbi\source\repos\WebTravelSite_Project\DestinationApi\obj\Debug\netcoreapp2.1\DestinationApi.pdb
