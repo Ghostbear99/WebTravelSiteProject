@@ -1,6 +1,5 @@
 ﻿body {
-    background-color: beige;
-    font-family: 'Patrick Hand SC', cursive;
+    background-color:beige;
 }
 p{
     font-weight:bold;
@@ -34,41 +33,5 @@ img{
 }
 .state-title{
     height:50px;
-}
-
-nav {
-    background-color: cornflowerblue;
-    height: 50px;
-}
-
-
-    nav ul {
-        height: 50px;
-        width: 725px;
-        margin: 0 auto;
-    }
-
-        nav ul li {
-            list-style-type: none;
-            float: left;
-            width: 180px;
-        }
-
-li a {
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    display: block;
-    text-decoration: none;
-    list-style-type: none;
-    font-family: 'Open Sans', sans-serif;
-}
-
-    li a:hover {
-        background-color: white;
-        color: black;
-        text-decoration: none;
-        list-style-type: none;
-    }
 }
 
