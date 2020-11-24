@@ -5,13 +5,6 @@ const url = require("url");
 const fs = require("fs");
 //req is request, the thing we listen for
 //res is response, the thing we write to
-/*
-req.url returns:
-/Destinations.html
-/Destinations.css
-/Destinations.js
-/ favicon.ico
-*/
 let server = http.createServer(function (req, res) {
     //URL path
     let path = url.parse(req.url).pathname;

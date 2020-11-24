@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>Travel Guide</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Home.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+
+</head>
+
+<body style="background: url(https://wallpaperaccess.com/full/239663.jpg); background-size: 100% 100%;">
+
+    <div id="content">
+        <header><h1>Welcome to the United States Travel Guide!</h1></header>
+        <div id="accessDestinations">
+            Click here to start planning your ultimate trip! <input type="button" value="Plan Trip" id="btnPlanTrip" onclick="btnPlanTrip_Click" />
+        </div>
+
+        <script>
+            $(document).ready(function () { $('#btnPlanTrip').on("click", btnPlanTrip_Click); });
+
+            function btnPlanTrip_Click() {
+                window.location.replace("Destinations.html");
+            }
+        </script>
+
+</body>
+
+
+
+</html>
