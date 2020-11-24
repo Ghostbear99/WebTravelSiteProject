@@ -20,20 +20,30 @@ namespace DestinationApi.Controllers
         public String GetState(int stateID)
         {
             List<State> items = null;
-            using (StreamReader r = new StreamReader("test.json"))
+            using (StreamReader r = new StreamReader("stateInfo.json"))
             {
                 string json = r.ReadToEnd();
                 items = JsonConvert.DeserializeObject<List<State>>(json);
             }
             temp = items[stateID];
 
-            string message = temp.Name + "|" + temp.BasicInfo + "|" + temp.LocationOneHeader + "|" + temp.LocationOneImage + "|" + temp.LocationOneText + "|" + temp.LocationTwoHeader + "|" + temp.LocationTwoImage + "|" + temp.LocationTwoText;
-            //If I merge message and messageTwo something goes wrong with API, not sure why
-            //string messageTwo = "|" + temp.LocationThreeHeader + "|" + temp.LocationThreeImage + "|" + temp.LocationThreeText;
-
+            string message = temp.Name + "|" + temp.Image;
             return message;
+        }
+        [HttpGet("GetFlight/{flightName}")]
+        public string GetFlight(string flightName)
+        {
+            return "";
+        }
+        [HttpPost("PutCustomer/{customerName}/{flightName}/{flightPrice}/{hotelName}/{hotelPrice}")]
+        public void PostCustomer(string customerName, string flightName, Decimal flightPrice, string hotelName, Decimal hotelPrice)
+        {
 
-
+        }
+        [HttpGet("GetCustomer")]
+        public string GetCustomer()
+        {
+            return "";
         }
     }
 }
