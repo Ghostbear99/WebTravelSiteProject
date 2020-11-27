@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Destinations.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+    <script src="Destinations.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <strong>
+                <li><a href="../Home.html">Home</a></li>
+                <li><a href="../Booking.html">Book a Trip!</a></li>
+            </strong>
+
+        </ul>
+    </nav>
+
+    <br /><br />
+
+          <div id="state-toolbar">
+              <input type="Text" id="search-text" placeholder="Search..." />
+              <button id="search-button">Search   </button>
+          </div>
+    <div id="state-list"></div>
+    <div id="search-state-results"></div>
+    <div id="state-info"></div>
+
+    <style>
+        input[type=Text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 20px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        input[type=Text]:focus {
+            width: 70%;
+        }
+
+        #search-button {
+            background-color: white;
+            border-radius: 16px;
+            border: 1px solid #d9d9d9;
+            text-shadow: 1px 1px #fff;
+            padding: 10px 36px 10px 36px;
+            }
+    </style>
+</body>
+</html>
