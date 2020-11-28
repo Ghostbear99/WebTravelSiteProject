@@ -15,7 +15,6 @@ namespace DestinationApi.Models
         private decimal hotelPrice;
         private DateTime tripStart;
         private DateTime tripEnd;
-        private string name;
         private int numFlight;
         private int numHotel;
         private string stateOrigin;
@@ -25,7 +24,7 @@ namespace DestinationApi.Models
         {
 
         }
-        public Order(string flightName, string flightClass, int flightPrice, string hotelName, string hotelType, decimal hotelPrice, DateTime start, DateTime end, string customerName, int numFlight,int numHotel,string origin, string destination)
+        public Order(string flightName, string flightClass, int flightPrice, string hotelName, string hotelType, decimal hotelPrice, DateTime start, DateTime end,  int numFlight,int numHotel,string origin, string destination)
         {
             this.flightName = flightName;
             this.flightClass = flightClass;
@@ -35,7 +34,6 @@ namespace DestinationApi.Models
             this.hotelPrice = hotelPrice;
             tripStart = start;
             tripEnd = end;
-            name = customerName;
             this.numFlight = numFlight;
             this.numHotel = numHotel;
             stateOrigin = origin;
@@ -128,17 +126,6 @@ namespace DestinationApi.Models
             set
             {
                 tripEnd = value;
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
             }
         }
         public int NumFlight

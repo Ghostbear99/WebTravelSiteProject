@@ -29,6 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Booking.js" />
     <Compile Include="Destinations.js">
       <SubType>Code</SubType>
     </Compile>

@@ -100,15 +100,15 @@ namespace DestinationApi.Controllers
             DBConnect db = new DBConnect();
             string format = "yyyy-MM-dd";
             String sql = "INSERT INTO Orders VALUES('" + theOrder.FlightName + "','" + theOrder.FlightClass + "'," + theOrder.FlightPrice +
-                ",'" + theOrder.HotelName + "','" + theOrder.HotelType + "'," + theOrder.HotelPrice + ",'" + theOrder.TripStart.ToString(format) + "','" + theOrder.TripEnd.ToString(format) + "','" +
-                theOrder.Name + "'," + theOrder.NumFlight + "," + theOrder.NumHotel + ",'" + theOrder.StateOrigin + "','" + theOrder.StateDestination + "')";
+                ",'" + theOrder.HotelName + "','" + theOrder.HotelType + "'," + theOrder.HotelPrice + ",'" + theOrder.TripStart.ToString(format) + "','" + theOrder.TripEnd.ToString(format) + "'," 
+                + theOrder.NumFlight + "," + theOrder.NumHotel + ",'" + theOrder.StateOrigin + "','" + theOrder.StateDestination + "')";
 
             string result = db.DoUpdate(sql);
             return result;
 
         }
         [HttpGet("GetOrders")]
-        public List<Order> GetCustomer(string name)
+        public List<Order> GetOrder(string name)
         {
             DBConnect db = new DBConnect();
             String sql = "SELECT * FROM Orders";
@@ -126,7 +126,6 @@ namespace DestinationApi.Controllers
                 newOrder.HotelPrice = decimal.Parse(record["HotelPrice"].ToString());
                 newOrder.TripStart = DateTime.Parse(record["TripStartDate"].ToString());
                 newOrder.TripEnd = DateTime.Parse(record["TripEndDate"].ToString());
-                newOrder.Name = record["CustomerName"].ToString();
                 newOrder.NumFlight = int.Parse(record["NumFlight"].ToString());
                 newOrder.NumHotel = int.Parse(record["NumHotel"].ToString());
                 newOrder.StateOrigin = record["StateOrigin"].ToString();

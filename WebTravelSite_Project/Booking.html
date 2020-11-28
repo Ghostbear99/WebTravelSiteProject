@@ -3,9 +3,96 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Booking.js"></script>
     <title></title>
 </head>
 <body>
-
+    <div>
+        <select id="state-select">
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Conneticut</option>
+            <option>Deleware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+        </select>
+        <select id="hotel-select"></select>
+        <select id="hotel-type-select">
+            <option>Suite</option>
+            <option>Two Bed</option>
+            <option>Single Bed</option>
+        </select>
+        <input type="text" id="hotel-price" readonly></input>
+        <input type="tel" id="numRooms" />
+    </div>
+    <div>
+        <select id="flight">
+            <option>Delta</option>
+            <option>SouthWest</option>
+            <option>Spirit</option>
+            <option>United</option>
+        </select>
+        <select id="flight-class">
+            <option>Economy Class</option>
+            <option>Business Class</option>
+            <option>First Class</option>
+        </select>
+        <input type="text" id="flight-price" readonly></input>
+        <input type="text" id="numSeats" />
+    </div>
+    <div>
+        <input type="date" id="start" name="trip-start">
+        <input type="date" id="end" name="trip-end" />
+    </div>
+    <div>
+        <button>Submit</button>
+        <button>Add Another Destination</button>
+        <button>Checkout</button>
+    </div>
 </body>
 </html>
