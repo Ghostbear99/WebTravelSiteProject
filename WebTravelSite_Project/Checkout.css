@@ -1,0 +1,221 @@
+﻿
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+nav {
+    background-color: lightgreen;
+    height: 50px;
+    border-radius: 70px;
+}
+
+
+
+    nav ul {
+        height: 50px;
+        width: 725px;
+        margin-left: 500px;
+    }
+
+        nav ul li {
+            list-style-type: none;
+            float: left;
+            width: 180px;
+        }
+
+li a {
+    border-radius: 25px;
+    color: black;
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+    li a:hover {
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        list-style-type: none;
+    }
+h1{
+    text-align:center;
+}
+h2{
+    text-align:center;
+}
+#hotel-div {
+    border-radius: 10px;
+    border: solid;
+}
+#flight-div {
+    border-radius: 10px;
+    border: solid;
+}
+#flight-head{
+    display:none;
+}
+#hotel-head{
+    display:none;
+}
+p:before {
+    content: attr("name");
+}
+.flight-company:before{
+    content:"Company:   ";
+    font-weight:bold;
+}
+.flight-company{
+    margin-left:2%;
+}
+.flight-class:before{
+    content:"Class:   ";
+    font-weight:bold;
+}
+.flight-class{
+    margin-left:2%;
+}
+.flight-seats:before{
+    content:"Number of Seats:   ";
+    font-weight:bold;
+}
+.flight-seats{
+    margin-left:2%;
+}
+.flight-start:before{
+    content:"Flight Start:   ";
+    font-weight:bold;
+}
+.flight-start{
+    margin-left:2%;
+}
+.flight-end:before{
+    content:"Flight Return:   ";
+    font-weight:bold;
+}
+.flight-end{
+    margin-left:2%;
+}
+.flight-cost:before{
+    content:"Price:   ";
+    font-weight:bold;
+}
+.flight-cost{
+    margin-left:2%;
+}
+.hotel-destination:before{
+    content:"Destination:   ";
+    font-weight:bold;
+}
+.hotel-destination{
+    margin-left:2%;
+}
+.hotel-name:before{
+    content:"Name:   ";
+    font-weight:bold;
+}
+.hotel-name{
+    margin-left:2%;
+}
+.hotel-room-type:before{
+    content:"Room Type:   ";
+    font-weight:bold;
+}
+.hotel-room-type{
+    margin-left:2%;
+}
+.hotel-first-name:before{
+    content:"First Name:   ";
+    font-weight:bold;
+}
+.hotel-first-name{
+    margin-left:2%;
+}
+.hotel-last-name:before{
+    content:"Last Name:   ";
+    font-weight:bold;
+}
+.hotel-last-name{
+    margin-left:2%;
+}
+.hotel-email:before{
+    content:"Email:   ";
+    font-weight:bold;
+}
+.hotel-email{
+    margin-left:2%;
+}
+.hotel-start:before{
+    content:"Hotel Start:   ";
+    font-weight:bold;
+}
+.hotel-start{
+    margin-left:2%;
+}
+.hotel-end:before{
+    content:"Hotel End:   ";
+    font-weight:bold;
+}
+.hotel-end{
+    margin-left:2%;
+}
+.hotel-rooms:before{
+    content:"Number of Rooms:   ";
+    font-weight:bold;
+}
+.hotel-rooms{
+    margin-left:2%;
+}
+.hotel-pick-up:before{
+    content:"Pick Up:   ";
+    font-weight:bold;
+}
+.hotel-pick-up{
+    margin-left:2%;
+}
+.flight-num:before{
+    content:"Flight Num:   ";
+    font-weight:bold;
+}
+.flight-num{
+    margin-left:2%;
+}
+.requests:before{
+    content:"Requests:   ";
+    font-weight:bold;
+    margin-left:50px;
+}
+.requests{
+    margin-left:2%;
+}
+.hotel-head{
+    margin-left:1%;
+}
+.hotel-cost:before{
+    content:"Price:   ";
+    font-weight:bold;
+}
+.hotel-cost{
+    margin-left:2%;
+}
+button{
+    padding:10px;
+    border-radius:10px;
+}
+#delete-all-flights{
+    background-color:lightcoral;
+    margin-left:37%;
+}
+#delete-all-hotels{
+    background-color:lightcoral;
+}
+#submit-all-orders{
+    background-color:lightgreen;
+}
+#individual-flight-head{
+    margin-left:1%;
+}
+

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="Hotels.css">
+    <script src="Hotels.js"></script>
+    <title></title>
+</head>
+
+<body style="background: url(https://www.fashionislandhotel.com/images/FIH_Homepage_HotelView-1-1920x1080.jpg); background-size: 100% 105%;">
+    <body>
+
+        <div id="content">
+
+            <nav>
+                <ul>
+                    <strong>
+                        <li><a href="../Home.html">Home</a></li><br /><br /><br /><br /><br /><br />
+                        <li><a href="../Destinations.html">Destinations</a></li><br /><br /><br /><br /><br /><br />
+                        <li><a href="../Booking.html">Flights</a></li>
+
+                    </strong>
+
+                </ul>
+            </nav>
+
+                <table>
+                    <h1>Hotel Booking Enquiry Form</h1>
+
+                    <p>Which state are you visiting?</p>
+                    <select id="state-select-destination" class="data">
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>Arizona</option>
+                        <option>Arkansas</option>
+                        <option>California</option>
+                        <option>Colorado</option>
+                        <option>Conneticut</option>
+                        <option>Deleware</option>
+                        <option>Florida</option>
+                        <option>Georgia</option>
+                        <option>Hawaii</option>
+                        <option>Idaho</option>
+                        <option>Illinois</option>
+                        <option>Indiana</option>
+                        <option>Iowa</option>
+                        <option>Kansas</option>
+                        <option>Kentucky</option>
+                        <option>Louisiana</option>
+                        <option>Maine</option>
+                        <option>Maryland</option>
+                        <option>Massachusetts</option>
+                        <option>Michigan</option>
+                        <option>Minnesota</option>
+                        <option>Mississippi</option>
+                        <option>Missouri</option>
+                        <option>Montana</option>
+                        <option>Nebraska</option>
+                        <option>Nevada</option>
+                        <option>New Hampshire</option>
+                        <option>New Jersey</option>
+                        <option>New Mexico</option>
+                        <option>New York</option>
+                        <option>North Carolina</option>
+                        <option>North Dakota</option>
+                        <option>Ohio</option>
+                        <option>Oklahoma</option>
+                        <option>Oregon</option>
+                        <option>Pennsylvania</option>
+                        <option>Rhode Island</option>
+                        <option>South Carolina</option>
+                        <option>South Dakota</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Utah</option>
+                        <option>Vermont</option>
+                        <option>Virginia</option>
+                        <option>Washington</option>
+                        <option>West Virginia</option>
+                        <option>Wisconsin</option>
+                        <option>Wyoming</option>
+                    </select>
+
+                    <p>Choose from one of our partner hotels.</p>
+                    <select id="hotel-select" class="data">
+                        <option>Please Select</option>
+                        <option>Courtyard by Marriott</option>
+                        <option>JW Marriott</option>
+                        <option>Hilton</option>
+                        <option>Hyatt</option>
+                        <option>Westin</option>
+                        <option>Best Western</option>
+                        <option>Four Seasons Hotel</option>
+                        <option>Holiday Inn</option>
+                        <option>Intergalactic Hotel</option>
+                        <option>Crowne-Plaza</option>
+                    </select>
+
+                    <p>What kind of room would you like to reserve?</p>
+                    <select id="hotel-type-select" class="data">
+                        <option>Please Select</option>
+                        <option>Suite</option>
+                        <option>Two Bed</option>
+                        <option>Single Bed</option>
+                    </select>
+                    <p>Number of Rooms</p>
+                    <input type="text" id="numRooms" class="data" />
+                    <p>Name</p>
+                    <input type="text" id="firstName" placeholder="First" class="data" />
+                    <input type="text" id="lastName" placeholder="Last" class="data" />
+                    <p>Email</p>
+                    <input type="text" id="email" placeholder="john@company.com" class="data" />
+
+                    <div>
+                        <p>Arrival & Departure </p> <input type="date" id="start" name="trip-start" class="data"><input type="date" id="end" name="trip-end" class="data" />
+                        
+                    </div>
+
+                    <p>Need to get picked up?</p>
+
+                    <input type="radio" id="yes" value="Yes, Sure!" name="picked-up" class="data">
+                    <label for="yes">Yes, Sure!</label>
+                    <br>
+                    <input type="radio" id="no" value="No need." name="picked-up" class="data">
+                    <label for="no">No need.</label>
+                    <br>
+
+                    <div>
+                        <p>Flight Number (Optional) </p> <input type="text" id="flightNumber" placeholder="C390" class="data" />
+                        <p>Additional Requests? </p> <input type="text" id="requests" placeholder="..." class="data" />
+                    </div>
+                    <p>Price</p>
+                    <input type="text" id="hotel-price" readonly />
+                    <br /><br />
+                    <div>
+                        <button id="add-to-cart">Submit</button>
+                        <button id="add-another">Add Another Enquiry</button>
+                        <button id="checkout"  href="../Checkout.html">Checkout</button>
+                    </div>
+                </table>
+        </div>
+
+
+
+    </body>
+</html>
