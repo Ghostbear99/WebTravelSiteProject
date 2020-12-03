@@ -34,6 +34,6 @@ http://cis-iis2.temple.edu/Fall2020/CIS3344_tug46503/Tutorial%20Project/Tutorial
 # Booking a Hotel
 ![Screenshot (335)](https://user-images.githubusercontent.com/36249471/101051095-17a24400-3553-11eb-9dab-728ff6aa6615.png)
 # Booking a Flight
-![Screenshot (338)](https://user-images.githubusercontent.com/36249471/101051142-24bf3300-3553-11eb-8343-af46e3104fb9.png)
+![Screenshot (334)](https://user-images.githubusercontent.com/36249471/101051306-50dab400-3553-11eb-9b3f-f6c62ae2c4e2.png)
 # Checkout Page
 ![Screenshot (336)](https://user-images.githubusercontent.com/36249471/101051169-2c7ed780-3553-11eb-996a-fc811d5dd9e0.png)
