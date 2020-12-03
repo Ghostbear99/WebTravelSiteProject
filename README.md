@@ -1,6 +1,6 @@
 # visitUS - a travel booking website.
 
-This project uses WebAPI's and databases to manage the back-end of this website, as well as node.js for the front-end.
+This project uses WebAPI's and databases to manage the back-end of this website, as well as node.js.
 
 
 # About NodeJS
