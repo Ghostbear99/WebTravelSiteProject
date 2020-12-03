@@ -10,7 +10,7 @@ NodeJS is neither a language or a framework, it is more akin to a runtime engine
 * NodeJS
 * npm (Comes with NodeJS download)
 * Visual Studio Enterprise 2017
-* Connection.cs
+* Connection.cs (In DestinationAPI/Models)
 * ASP.NET Core 2.1
 * ASP.NET Core 2.2
 
