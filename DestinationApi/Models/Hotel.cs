@@ -9,20 +9,18 @@ namespace DestinationApi.Models
     {
         private int Id;
         private string name;
-        private string state;
-        private decimal suitePrice;
-        private decimal twoBedPrice;
-        private decimal singleBedPrice;
+        private int suitePrice;
+        private int twoBedPrice;
+        private int singleBedPrice;
 
         public Hotel()
         {
 
         }
-        public Hotel(int id, string name,string state, decimal suite, decimal twoBed, decimal singleBed)
+        public Hotel(int id, string name,int suite, int twoBed, int singleBed)
         {
             Id = id;
             this.name = name;
-            this.state = state;
             suitePrice = suite;
             twoBedPrice = twoBed;
             singleBedPrice = singleBed;
@@ -49,18 +47,7 @@ namespace DestinationApi.Models
                 name = value;
             }
         }
-        public string State
-        {
-            get
-            {
-                return state;
-            }
-            set
-            {
-                state = value;
-            }
-        }
-        public decimal SuiteBedPrice
+        public int SuiteBedPrice
         {
             get
             {
@@ -71,7 +58,7 @@ namespace DestinationApi.Models
                 suitePrice = value;
             }
         }
-        public decimal TwoBedPrice
+        public int TwoBedPrice
         {
             get
             {
@@ -82,7 +69,7 @@ namespace DestinationApi.Models
                 twoBedPrice = value;
             }
         }
-        public decimal SingleBedPrice
+        public int SingleBedPrice
         {
             get
             {
