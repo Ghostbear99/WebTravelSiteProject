@@ -13,3 +13,7 @@ NodeJS is neither a language or a framework, it is more akin to a runtime engine
 * Connection.cs
 * ASP.NET Core 2.1
 * ASP.NET Core 2.2
+
+
+# Here is a complete tutorial on how to navigate node.js and how the website was made.
+http://cis-iis2.temple.edu/Fall2020/CIS3344_tug46503/Tutorial%20Project/Tutorial.html
