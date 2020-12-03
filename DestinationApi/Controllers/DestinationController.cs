@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Utilities;
 using System.Data;
+using System.Diagnostics;
 
 namespace DestinationApi.Controllers
 {
@@ -49,11 +50,11 @@ namespace DestinationApi.Controllers
             }
             return newFlight;
         }
-        [HttpGet("GetHotel/{hotelName}/{state}")]
-        public Hotel GetHotel(string hotelName, string state)
+        [HttpGet("GetHotel/{hotelName}")]
+        public Hotel GetHotel(string hotelName)
         {
             DBConnect db = new DBConnect();
-            String sql = "SELECT * FROM Hotels WHERE HotelName='" + hotelName + "'AND State='" + state + "'";
+            String sql = "SELECT * FROM Hotels WHERE HotelName='" + hotelName + "'";
             DataSet recordSet = db.GetDataSet(sql);
             Hotel newHotel = new Hotel();
             if (recordSet.Tables[0].Rows.Count > 0)
@@ -61,98 +62,104 @@ namespace DestinationApi.Controllers
                 DataRow record = recordSet.Tables[0].Rows[0];
                 newHotel.ID = int.Parse(record["Id"].ToString());
                 newHotel.Name = record["HotelName"].ToString();
-                newHotel.State = record["State"].ToString();
-                newHotel.SuiteBedPrice = decimal.Parse(record["SuitePrice"].ToString());
-                newHotel.TwoBedPrice = decimal.Parse(record["TwoBedPrice"].ToString());
-                newHotel.SingleBedPrice = decimal.Parse(record["SingleBedPrice"].ToString());
+                newHotel.SuiteBedPrice = int.Parse(record["SuitePrice"].ToString());
+                newHotel.TwoBedPrice = int.Parse(record["TwoBedPrice"].ToString());
+                newHotel.SingleBedPrice = int.Parse(record["SingleBedPrice"].ToString());
             }
             return newHotel;
         }
-        [HttpGet("GetAllHotel/{state}")]
-        public List<Hotel> GetAllHotel(string state)
-        {
-            List<Hotel> temp = new List<Hotel>();
-            DBConnect db = new DBConnect();
-            String sql = "SELECT * FROM Hotels WHERE State='" + state + "'";
-            DataSet recordSet = db.GetDataSet(sql);
-            if (recordSet.Tables[0].Rows.Count > 0)
-            {
-                for (int i = 0; i < recordSet.Tables[0].Rows.Count; i++)
-                {
-                    DataRow record = recordSet.Tables[0].Rows[i];
-                    Hotel newHotel = new Hotel();
-                    newHotel.ID = int.Parse(record["Id"].ToString());
-                    newHotel.Name = record["HotelName"].ToString();
-                    newHotel.State = record["State"].ToString();
-                    newHotel.SuiteBedPrice = decimal.Parse(record["SuitePrice"].ToString());
-                    newHotel.TwoBedPrice = decimal.Parse(record["TwoBedPrice"].ToString());
-                    newHotel.SingleBedPrice = decimal.Parse(record["SingleBedPrice"].ToString());
-
-                    temp.Add(newHotel);
-                }
-
-            }
-            return temp;
-        }
-        [HttpPost("InsertOrder")]
-        public string InsertOrder([FromBody]Order theOrder)
+        [HttpPost("InsertFlightOrder")]
+        public string InsertFlightOrder(string origin, string destination, string company, string flightClass, int numSeats, string tripStart, string tripEnd, int cost)
         {
             DBConnect db = new DBConnect();
-            string format = "yyyy-MM-dd";
-            String sql = "INSERT INTO Orders VALUES('" + theOrder.FlightName + "','" + theOrder.FlightClass + "'," + theOrder.FlightPrice +
-                ",'" + theOrder.HotelName + "','" + theOrder.HotelType + "'," + theOrder.HotelPrice + ",'" + theOrder.TripStart.ToString(format) + "','" + theOrder.TripEnd.ToString(format) + "'," 
-                + theOrder.NumFlight + "," + theOrder.NumHotel + ",'" + theOrder.StateOrigin + "','" + theOrder.StateDestination + "')";
+            String sql = "INSERT INTO FlightOrder VALUES('" + origin + "','" + destination + "','" + company + "','" + flightClass + "'," + numSeats + ",'" + tripStart + "','" + tripEnd + "'," + cost + ")";
 
             string result = db.DoUpdate(sql);
             return result;
 
         }
-        [HttpGet("GetOrders")]
-        public List<Order> GetOrder(string name)
+        [HttpGet("GetAllFlightOrder")]
+        public List<FlightOrder> GetAllFlightOrder()
         {
             DBConnect db = new DBConnect();
-            String sql = "SELECT * FROM Orders";
+            String sql = "SELECT * FROM FlightOrder";
             DataSet recordSet = db.GetDataSet(sql);
-            List<Order> newOrderList = new List<Order>();
-            if (recordSet.Tables[0].Rows.Count > 0)
+            List<FlightOrder> newOrderList = new List<FlightOrder>();
+            for (int row = 0;  row < recordSet.Tables[0].Rows.Count; row++)
             {
-                Order newOrder = new Order();
-                DataRow record = recordSet.Tables[0].Rows[0];
-                newOrder.FlightName = record["FlightName"].ToString();
+                FlightOrder newOrder = new FlightOrder();
+                DataRow record = recordSet.Tables[0].Rows[row];
+                newOrder.Origin = record["Origin"].ToString();
+                newOrder.Destination = record["Destination"].ToString();
+                newOrder.Company = record["Company"].ToString();
                 newOrder.FlightClass = record["FlightClass"].ToString();
-                newOrder.FlightPrice = int.Parse(record["FlightPrice"].ToString());
-                newOrder.HotelName = record["HotelName"].ToString();
-                newOrder.HotelType = record["HotelType"].ToString();
-                newOrder.HotelPrice = decimal.Parse(record["HotelPrice"].ToString());
-                newOrder.TripStart = DateTime.Parse(record["TripStartDate"].ToString());
-                newOrder.TripEnd = DateTime.Parse(record["TripEndDate"].ToString());
-                newOrder.NumFlight = int.Parse(record["NumFlight"].ToString());
-                newOrder.NumHotel = int.Parse(record["NumHotel"].ToString());
-                newOrder.StateOrigin = record["StateOrigin"].ToString();
-                newOrder.StateDestination = record["StateDestination"].ToString();
+                newOrder.NumSeats = int.Parse(record["NumSeats"].ToString());
+                newOrder.TripStart = record["TripStart"].ToString();
+                newOrder.TripEnd = record["TripEnd"].ToString();
+                newOrder.Cost = int.Parse(record["Cost"].ToString());
 
                 newOrderList.Add(newOrder);
             }
             return newOrderList;
         }
-        [HttpGet("PurgeOrder")]
-        public string DeleteAllOrder()
+        [HttpGet("PurgeFlightOrder")]
+        public string DeleteAllFlightOrder()
         {
             DBConnect db = new DBConnect();
-            String sql = "DELETE FROM Orders";
+            String sql = "DELETE FROM FlightOrder";
 
             string result = db.DoUpdate(sql);
             return result;
 
         }
-        [HttpGet("DeleteSpecificOrder/{id}")]
-        public string DeleteSpecificOrder(int id)
+        [HttpPost("InsertHotelOrder")]
+        public string InsertHotelOrder(string destination, string hotelName, string roomType, string customerFirst, string customerLast, string customerEmail, string tripStart, string tripEnd, string pickedUp, string flightNum, string additionalRequests, int numRooms, int cost)
         {
             DBConnect db = new DBConnect();
-            String sql = "DELETE FROM Orders WHERE Id='" + id + "'";
+            String sql = "INSERT INTO HotelOrder VALUES('" + destination + "','" + hotelName + "','" + roomType + "','" + customerFirst + "','" + customerLast + "','" + customerEmail + "','" + tripStart + "','" + tripEnd + "','" + pickedUp + "','" + flightNum + "','" + additionalRequests + "'," + numRooms + "," + cost + ")";
 
             string result = db.DoUpdate(sql);
             return result;
+
+        }
+        [HttpGet("GetAllHotelOrder")]
+        public List<HotelOrder> GetAllHotelOrder()
+        {
+            DBConnect db = new DBConnect();
+            String sql = "SELECT * FROM HotelOrder";
+            DataSet recordSet = db.GetDataSet(sql);
+            List<HotelOrder> newOrderList = new List<HotelOrder>();
+            for (int row = 0; row < recordSet.Tables[0].Rows.Count; row++)
+            {
+                HotelOrder newOrder = new HotelOrder();
+                DataRow record = recordSet.Tables[0].Rows[0];
+                newOrder.Destination = record["Destination"].ToString();
+                newOrder.HotelName = record["HotelName"].ToString();
+                newOrder.RoomType = record["RoomType"].ToString();
+                newOrder.CustomerFirst = record["CustomerFirst"].ToString();
+                newOrder.CustomerLast = record["CustomerLast"].ToString();
+                newOrder.CustomerEmail = record["CustomerEmail"].ToString();
+                newOrder.TripStart = record["TripStart"].ToString();
+                newOrder.TripEnd = record["TripEnd"].ToString();
+                newOrder.PickedUp = record["PickedUp"].ToString();
+                newOrder.FlightNum = record["FlightNum"].ToString();
+                newOrder.AdditionalRequests = record["AdditionalRequests"].ToString();
+                newOrder.NumRooms = int.Parse(record["NumRooms"].ToString());
+                newOrder.Cost = int.Parse(record["Cost"].ToString());
+
+                newOrderList.Add(newOrder);
+            }
+            return newOrderList;
+        }
+        [HttpGet("PurgeHotelOrder")]
+        public string DeleteAllHotelOrder()
+        {
+            DBConnect db = new DBConnect();
+            String sql = "DELETE FROM HotelOrder";
+
+            string result = db.DoUpdate(sql);
+            return result;
+
         }
     }
 }
